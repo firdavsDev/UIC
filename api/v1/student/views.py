@@ -10,4 +10,3 @@ class StudentViewSet(viewsets.ModelViewSet):
     serializer_class = StudentSerializer
     http_method_names = ['get', 'post', 'put', 'patch']
     
-    
