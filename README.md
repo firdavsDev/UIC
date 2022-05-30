@@ -11,4 +11,6 @@
 **debug_toolbar** not done yet
 **fake_admin_panel** not done yet
 **models @proprety** not done yet
-**add hommiy to student & validation(max min sum CRUD)**
+**add hommiy to student & validation(max min sum CRUD)** not done yet
+**git hub actions** not done yet
+##UIC Group##
