@@ -12,7 +12,7 @@ from import_export.admin import ImportExportActionModelAdmin
 @admin.register(models.Sponsor)
 class SponsorAdmin(ImportExportActionModelAdmin, admin.ModelAdmin):
     list_display = ['id', 'full_name', 'phone_number','company_name','status','created_at' ]
-    list_filter = ['full_name', 'status',]
+    list_filter = ['status',]
     list_display_links = ('id', 'full_name', 'phone_number')
     date_hierarchy = 'created_at'
     ordering = ['-created_at']
@@ -20,7 +20,6 @@ class SponsorAdmin(ImportExportActionModelAdmin, admin.ModelAdmin):
 @admin.register(models.SponsorAllocateAmount)
 class SponsorAllocateAmounAdmin(admin.ModelAdmin):
     list_display = ['id', 'sponsor', 'amount', 'created_at']
-    list_filter = ['sponsor', 'amount']
     list_display_links = ('id', 'sponsor', 'amount')
     date_hierarchy = 'created_at'
     ordering = ['-created_at']
