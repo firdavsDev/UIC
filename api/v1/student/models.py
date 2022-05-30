@@ -10,7 +10,7 @@ class Student(models.Model):
     full_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
     otm = models.ForeignKey('Otm', on_delete=models.CASCADE, related_name='students_otm')
-    sponsors = models.ManyToManyField(sponsor_models.Sponsor, related_name='students_sponsors', help_text='Sponsorlar')
+    sponsors = models.ManyToManyField(sponsor_models.Sponsor, related_name='students_sponsors', help_text='Homiylar', blank=True)
     student_type = models.CharField(max_length=60, choices=type_of_student)
     allocated_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     contract_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
