@@ -16,3 +16,11 @@ class SponsorAdmin(ImportExportActionModelAdmin, admin.ModelAdmin):
     list_display_links = ('id', 'full_name', 'phone_number')
     date_hierarchy = 'created_at'
     ordering = ['-created_at']
+
+@admin.register(models.SponsorAllocateAmount)
+class SponsorAllocateAmounAdmin(admin.ModelAdmin):
+    list_display = ['id', 'sponsor', 'amount', 'created_at']
+    list_filter = ['sponsor', 'amount']
+    list_display_links = ('id', 'sponsor', 'amount')
+    date_hierarchy = 'created_at'
+    ordering = ['-created_at']

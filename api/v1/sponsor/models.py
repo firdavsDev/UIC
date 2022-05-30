@@ -28,3 +28,18 @@ class Sponsor(models.Model):
         verbose_name = 'Sponsor'
         verbose_name_plural = 'Sponsors'
         
+        
+## Sponsor allocate amount model
+class SponsorAllocateAmount(models.Model):
+    sponsor = models.ForeignKey(Sponsor, on_delete=models.CASCADE, related_name='sponsor_allocate_amount')
+    amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    
+    def __str__(self):
+        return self.sponsor.full_name
+    
+    class Meta:
+        db_table = 'sponsor_allocate_amount'
+        ordering = ['-created_at']
+        verbose_name = 'Sponsor allocate amount'
+        verbose_name_plural = 'Sponsor allocate amounts'

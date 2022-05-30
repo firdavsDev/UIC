@@ -11,8 +11,8 @@ class OTMSerializer(serializers.ModelSerializer):
 class StudentSerializer(serializers.ModelSerializer):
     # otm = serializers.PrimaryKeyRelate    dField(queryset=OTM.objects.all())
     # sponsors = serializers.PrimaryKeyRelatedField(many=True, queryset=Sponsor.objects.all())
-    # otm = OTMSerializer()
-    # sponsors = SponsorSerializer(many=True) 
+    otm = OTMSerializer()
+    sponsors_allocated_amount = SponsorAllocatedAmount(many=True) 
     class Meta:
         model = Student
         fields = "__all__"
